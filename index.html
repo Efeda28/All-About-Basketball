@@ -3,29 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All About Basketball - Your go-to source for everything basketball">
     <title>All About Basketball</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color: #1a1a1a;
+            padding: 1em;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        .hero {
+            background-image: url('basketball.svg');
+            height: 300px;
+            background-size: cover;
+            text-align: center;
+            padding: 50px;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+        }
+        .tab {
+            padding: 10px;
+            border: 1px solid #ffffff;
+            margin-right: 5px;
+        }
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>All About Basketball</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Welcome to the World of Basketball</h2>
-            <p>Basketball is a dynamic and exciting sport enjoyed by millions around the globe.</p>
-        </section>
-        <section>
-            <h2>History of Basketball</h2>
-            <p>Basketball was invented by Dr. James Naismith in 1891.</p>
-        </section>
-        <section>
-            <h2>Rules of the Game</h2>
-            <p>Learn the basic rules and regulations that govern basketball.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 All About Basketball</p>
-    </footer>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#rules">Rules</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#players">Players</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <h1>Welcome to All About Basketball</h1>
+    </div>
+    <div class="tabs">
+        <div class="tab" onclick="showContent('nba')">NBA Rules</div>
+        <div class="tab" onclick="showContent('fiba')">FIBA Rules</div>
+        <div class="tab" onclick="showContent('ncaa')">NCAA Rules</div>
+    </div>
+    <div class="content" id="nba">NBA rules content...</div>
+    <div class="content" id="fiba">FIBA rules content...</div>
+    <div class="content" id="ncaa">NCAA rules content...</div>
+    <div id="how-it-works">
+        <h2>How It Works</h2>
+        <p>Explanation of basketball game mechanics...</p>
+    </div>
+    <div id="skills">
+        <h2>Skills Training</h2>
+        <p>Drills for improving basketball skills...</p>
+    </div>
+    <div id="players">
+        <h2>Players</h2>
+        <div class="player-card">NBA Player Card</div>
+        <div class="player-card">EuroLeague Player Card</div>
+        <div class="player-card">International Player Card</div>
+    </div>
+    <script>
+        function showContent(tab) {
+            let contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+        }
+    </script>
 </body>
 </html>
